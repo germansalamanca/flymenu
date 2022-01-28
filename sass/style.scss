@@ -1,0 +1,134 @@
+@import 'variables';
+
+body{
+	padding: 0;
+	margin: 0;
+}
+
+*{
+	font-family: Arial;
+}
+.container{
+	margin-top: 3rem;
+}
+
+.auto-arrange-menu {
+	background: rgba(gray, .1);
+	overflow-x: scroll;
+	overflow-y: hidden;
+	padding: .5rem 4rem;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	@media (min-width: $lg) {
+		overflow: hidden;
+		padding: .3rem 1.5rem;
+	}
+	ul.menu {
+		background: white;
+      list-style: none;
+      padding: 0;
+		width: max-content;
+		display: flex;
+		justify-content: center;
+		position: relative;
+		transition: all ease 0.6s;
+		@media (min-width: $lg) {
+			width: 100%;
+		}
+		li {
+			display: block;
+			font-size: 0.94rem;
+			line-height: 0;
+			&:not(:last-child) {
+				a {
+						//border-right: 1px solid rgba(gray, .4);
+				}
+			}
+			a {
+				transition: all ease .5s;
+				font-size: 1.2rem;
+				padding: 0 1rem 0;
+				color: gray;
+				text-decoration: none;
+				display: block;
+				white-space: nowrap;
+				line-height: 1.4;
+				font-weight: 500;
+				&:hover {
+					color: $primary-light;
+				}
+			}
+			&.current {
+				a {
+					color: $primary;
+				}
+			}
+		}
+		li.dropdown-item {
+			//display: none;
+			@media (min-width: $lg){
+				display: block;
+			}
+			a {
+				font-weight: 700;
+				&:after {
+					content: "";
+					width: 10px;
+					height: 6px;
+					display: inline-block;
+					//background: url(../../img/icon-dropdown.svg) no-repeat;
+					margin-left: 0.3em;
+					position: relative;
+					top: -1px;
+					filter: hue-rotate(156deg) brightness(0.55) saturate(1.6);
+				}
+			}
+		}
+	}
+	ul.auto-arrange-dropdown {
+		padding: 0;
+		display: none;
+		position: absolute;
+		z-index: 100;
+		right: 0;
+		background: white;
+		max-width: 230px;
+		width: 100%;
+		box-shadow: 0rem 0.13rem 0.63rem rgba(0, 0, 0, 0.2);
+		border-radius: 6px;
+		right: 2rem;
+		opacity: 0;
+		opacity: 1; // Demo
+		transition: opacity ease 0.7s;
+		@media (min-width: $lg) {
+			&.active {
+				display: block;
+			}
+		}
+		li {
+			&:not(:last-child) {
+				border-bottom: 1px solid rgba(gray, .3);
+			}
+			&.current{
+				a{
+					color: $primary;
+				}
+			}
+			a {
+				color: gray;
+				text-decoration: none;
+				font-size: 0.94rem;
+				display: block;
+				padding: 0.7rem 1.3rem;
+				transition: all ease .5s;
+				&:hover {
+					background-color: rgba(gray, .05);
+					color: $primary-light;
+				}
+			}
+		}
+	}
+}
