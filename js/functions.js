@@ -1,6 +1,6 @@
 window.onload = ()=>{
 	if (document.querySelector(".auto-arrange-menu")) {
-		const breakpoint = 991,
+		const breakpoint = 576,
 		offset = 50;
 		let menuItemsArray = [],
 		itemPos = 0;
@@ -17,7 +17,7 @@ window.onload = ()=>{
 		}
 		function arrangeSubcatMenu() {
 			let viewportWidth = window.innerWidth;
-			if (viewportWidth > breakpoint) {
+			if (viewportWidth > breakpoint - 1) {
 				let containerWidth = menu.offsetWidth;
 				let totalItemsWidth = 0;
 				for(let i of Object.values(menuItemsArray)){

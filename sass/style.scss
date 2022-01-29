@@ -1,4 +1,6 @@
-@import 'variables';
+$primary: #003e90;
+$primary-light: #2681e2;
+$breakpoint: 576px;
 
 body{
 	padding: 0;
@@ -13,7 +15,7 @@ body{
 }
 
 .auto-arrange-menu {
-	background: rgba(gray, .1);
+	background: rgba(gray, .03);
 	overflow-x: scroll;
 	overflow-y: hidden;
 	padding: .5rem 4rem;
@@ -22,7 +24,7 @@ body{
 	&::-webkit-scrollbar {
 		display: none;
 	}
-	@media (min-width: $lg) {
+	@media (min-width: $breakpoint) {
 		overflow: hidden;
 		padding: .3rem 1.5rem;
 	}
@@ -35,7 +37,7 @@ body{
 		justify-content: center;
 		position: relative;
 		transition: all ease 0.6s;
-		@media (min-width: $lg) {
+		@media (min-width: $breakpoint) {
 			width: 100%;
 		}
 		li {
@@ -44,7 +46,7 @@ body{
 			line-height: 0;
 			&:not(:last-child) {
 				a {
-						//border-right: 1px solid rgba(gray, .4);
+						border-right: 1px solid rgba(gray, .4);
 				}
 			}
 			a {
@@ -68,8 +70,8 @@ body{
 			}
 		}
 		li.dropdown-item {
-			//display: none;
-			@media (min-width: $lg){
+			display: none;
+			@media (min-width: $breakpoint){
 				display: block;
 			}
 			a {
@@ -103,7 +105,7 @@ body{
 		opacity: 0;
 		opacity: 1; // Demo
 		transition: opacity ease 0.7s;
-		@media (min-width: $lg) {
+		@media (min-width: $breakpoint) {
 			&.active {
 				display: block;
 			}
