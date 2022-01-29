@@ -101,6 +101,7 @@ body{
 		position: absolute;
 		z-index: 100;
 		right: 0;
+		top: 2.6rem;
 		background: white;
 		max-width: 230px;
 		width: 100%;
@@ -117,7 +118,7 @@ body{
 		}
 		li {
 			&:not(:last-child) {
-				border-bottom: 1px solid rgba(gray, .3);
+				border-bottom: 1px solid rgba(gray, .2);
 			}
 			&.current{
 				a{

@@ -101,6 +101,7 @@ body {
   position: absolute;
   z-index: 100;
   right: 0;
+  top: 2.6rem;
   background: white;
   max-width: 230px;
   width: 100%;
@@ -117,7 +118,7 @@ body {
   }
 }
 .auto-arrange-menu ul.auto-arrange-dropdown li:not(:last-child) {
-  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 .auto-arrange-menu ul.auto-arrange-dropdown li.current a {
   color: #b51bb7;
