@@ -1,5 +1,5 @@
-$primary: #003e90;
-$primary-light: #2681e2;
+$primary: #b51bb7;
+$secondary: #13a3c5;
 $breakpoint: 576px;
 
 body{
@@ -10,15 +10,12 @@ body{
 *{
 	font-family: Arial;
 }
-.container{
-	margin-top: 3rem;
-}
 
 .auto-arrange-menu {
-	background: rgba(gray, .03);
+
 	overflow-x: scroll;
 	overflow-y: hidden;
-	padding: .5rem 4rem;
+	padding: .5rem 0;
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
 	&::-webkit-scrollbar {
@@ -26,7 +23,7 @@ body{
 	}
 	@media (min-width: $breakpoint) {
 		overflow: hidden;
-		padding: .3rem 1.5rem;
+		padding: .3rem 1rem;
 	}
 	ul.menu {
 		background: white;
@@ -42,7 +39,7 @@ body{
 		}
 		li {
 			display: block;
-			font-size: 0.94rem;
+			font-size: 1rem;
 			line-height: 0;
 			&:not(:last-child) {
 				a {
@@ -51,7 +48,6 @@ body{
 			}
 			a {
 				transition: all ease .5s;
-				font-size: 1.2rem;
 				padding: 0 1rem 0;
 				color: gray;
 				text-decoration: none;
@@ -60,7 +56,7 @@ body{
 				line-height: 1.4;
 				font-weight: 500;
 				&:hover {
-					color: $primary-light;
+					color: $secondary;
 				}
 			}
 			&.current {
@@ -75,17 +71,26 @@ body{
 				display: block;
 			}
 			a {
-				font-weight: 700;
+				color: #303030;
+				font-weight: 400;
 				&:after {
 					content: "";
-					width: 10px;
-					height: 6px;
 					display: inline-block;
-					//background: url(../../img/icon-dropdown.svg) no-repeat;
 					margin-left: 0.3em;
 					position: relative;
 					top: -1px;
-					filter: hue-rotate(156deg) brightness(0.55) saturate(1.6);
+					width: 0;
+					height: 0;
+					border-left: 0.26rem solid transparent;
+					border-right: 0.26rem solid transparent;
+					border-top: 0.42rem solid #303030;
+					transition: border-color ease .5s;
+				}
+				&:hover{
+					color: $secondary;
+					&:after {
+						border-top-color: $secondary;
+					}
 				}
 			}
 		}
@@ -103,7 +108,7 @@ body{
 		border-radius: 6px;
 		right: 2rem;
 		opacity: 0;
-		opacity: 1; // Demo
+		opacity: 1;
 		transition: opacity ease 0.7s;
 		@media (min-width: $breakpoint) {
 			&.active {
@@ -127,10 +132,22 @@ body{
 				padding: 0.7rem 1.3rem;
 				transition: all ease .5s;
 				&:hover {
-					background-color: rgba(gray, .05);
-					color: $primary-light;
+					background-color: rgba(gray, .04);
+					color: $secondary;
 				}
 			}
 		}
+	}
+}
+.swipe{
+	display: block;
+	background-color: rgba(gray, .05);
+	color: #adadad;
+	max-width: 6.25rem;
+	margin: 2rem auto;
+	padding: .5rem 1rem;
+	border-radius: 4px;
+	@media (min-width: $breakpoint){
+		display: none;
 	}
 }
